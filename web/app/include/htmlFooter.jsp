@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div id="footerID" class="footer" style="position: absolute;bottom: 0px;width: 100%;">
-    <p>数据库原理课程设计 高谦 计科1601班 </p>
+    <p>选课系统</p>
 </div>
 <style type="text/css">
     .icon-div {

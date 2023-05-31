@@ -20,8 +20,8 @@ public class runinfo extends HttpServlet {
         String cno = request.getParameter("cno");
         Object[] res = new Object[2];
         String[] row = new String[3];
-        row[0] = "高谦";
-        row[1] = "2016014302";
+        row[0] = "奥斯汀";
+        row[1] = "2020234090411";
         row[2] = "1-17周";
         res[0] = row;
         String[] row2 = new String[3];

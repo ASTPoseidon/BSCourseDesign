@@ -1,4 +1,4 @@
-create table db.course
+create table course
 (
     cno          varchar(20)   not null
         primary key,
@@ -10,7 +10,7 @@ create table db.course
     settno       varchar(20)   null
 );
 
-create table db.course_runtime
+create table course_runtime
 (
     semester  varchar(20) not null,
     cno       varchar(20) not null,
@@ -20,7 +20,7 @@ create table db.course_runtime
     primary key (cno, semester, runday, begintime, endtime)
 );
 
-create table db.course_semester
+create table course_semester
 (
     cno       varchar(20)  not null,
     semester  varchar(20)  not null,
@@ -33,9 +33,9 @@ create table db.course_semester
     primary key (cno, semester)
 );
 
-create table db.message
+create table message
 (
-    id       int           not null
+    id       int auto_increment
         primary key,
     sno      varchar(20)   null,
     content  varchar(1000) null,
@@ -44,16 +44,16 @@ create table db.message
     title    varchar(255)  null
 );
 
-create table db.notice
+create table notice
 (
-    id       int           not null
+    id       int auto_increment
         primary key,
     sendtime datetime      null,
     content  varchar(3000) null,
     title    varchar(255)  null
 );
 
-create table db.select_list
+create table select_list
 (
     major    varchar(30)  not null,
     semester varchar(20)  not null,
@@ -62,7 +62,7 @@ create table db.select_list
     primary key (semester, major)
 );
 
-create table db.semester
+create table semester
 (
     beginyear varchar(20) not null,
     endyear   int         not null,
@@ -70,7 +70,7 @@ create table db.semester
     primary key (beginyear, endyear, number)
 );
 
-create table db.student
+create table student
 (
     sno             varchar(20) not null
         primary key,
@@ -93,7 +93,7 @@ create table db.student
     status          varchar(20) null
 );
 
-create table db.study_course
+create table study_course
 (
     sno      varchar(20) not null,
     semester varchar(20) not null,
@@ -102,7 +102,7 @@ create table db.study_course
     primary key (sno, cno, semester)
 );
 
-create table db.teacher
+create table teacher
 (
     tno            varchar(20) not null
         primary key,
@@ -123,7 +123,7 @@ create table db.teacher
     direction      varchar(50) null
 );
 
-create table db.user
+create table user
 (
     account  varchar(20) not null,
     type     varchar(20) not null,

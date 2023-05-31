@@ -1,5 +1,5 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%request.setCharacterEncoding("utf-8");%>
 <jsp:include page="../include/htmlHead.jsp">
     <jsp:param name="title" value="添加人员"></jsp:param>
@@ -12,7 +12,8 @@
         <div class="col-md-12 column" style="margin-top: 50px;">
             <div class="col-md-5 column">
                 <h3>添加学生</h3>
-                <form role="form" action="${pageContext.request.contextPath}/addpeople" method="post" style="margin-top: 20px;">
+                <form role="form" action="${pageContext.request.contextPath}/addpeople" method="post"
+                      style="margin-top: 20px;">
                     <input type="hidden" value="student" name="type">
                     <div class="form-group">
                         <label for="sno">学号</label>
@@ -55,7 +56,8 @@
             <div class="col-md-1 column"></div>
             <div class="col-md-5 column">
                 <h3>添加教师</h3>
-                <form role="form" action="${pageContext.request.contextPath}/addpeople" method="post" style="margin-top: 20px;">
+                <form role="form" action="${pageContext.request.contextPath}/addpeople" method="post"
+                      style="margin-top: 20px;">
                     <input type="hidden" value="teacher" name="type">
                     <div class="form-group">
                         <label for="tno">工号</label>
@@ -123,4 +125,4 @@
         </div>
     </div>
 </div>
-<%@include file="../include/htmlFooter.jsp"%>
+<%@include file="../include/htmlFooter.jsp" %>

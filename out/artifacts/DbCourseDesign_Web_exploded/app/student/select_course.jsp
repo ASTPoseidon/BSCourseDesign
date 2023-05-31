@@ -1,11 +1,11 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%request.setCharacterEncoding("utf-8");%>
 <jsp:include page="../include/htmlHead.jsp">
     <jsp:param name="title" value="学生自主选课"></jsp:param>
 </jsp:include>
 <style>
-    .temp{
+    .temp {
         height: 34px;
         position: relative;
         top: -1px;
@@ -14,67 +14,62 @@
     }
 </style>
 <script type="text/javascript">
-    function cancle_select(cno,semester,cname,clocation,capacity,self) {
+    function cancle_select(cno, semester, cname, clocation, capacity, self) {
         $.ajax({
-            url:"${pageContext.request.contextPath}/select_course",
-            data:{type:"cancle",cno:cno,semester:semester},
-            type:"post",
-            success:function (data,textStatus,XMLHttpRequest) {
-                var id="status-"+cno;
-                document.getElementById(id).innerHTML="<span>选课状态：未选课程</span>";
-                self.setAttribute("onclick","ensure_select('"+cno+"','"+semester+"','"+cname+"','"+clocation+"',"+(capacity+1)+",this)");
-                self.innerText="选择课程";
+            url: "${pageContext.request.contextPath}/select_course",
+            data: {type: "cancle", cno: cno, semester: semester},
+            type: "post",
+            success: function (data, textStatus, XMLHttpRequest) {
+                var id = "status-" + cno;
+                document.getElementById(id).innerHTML = "<span>选课状态：未选课程</span>";
+                self.setAttribute("onclick", "ensure_select('" + cno + "','" + semester + "','" + cname + "','" + clocation + "'," + (capacity + 1) + ",this)");
+                self.innerText = "选择课程";
                 alert("操作成功！");
-                var child=document.getElementById("selected-"+cno);
+                var child = document.getElementById("selected-" + cno);
                 document.getElementById("selected_course_list").removeChild(child);
-                document.getElementById("capacity-"+cno).innerHTML="<span>剩余容量：</span>"+(capacity+1);
+                document.getElementById("capacity-" + cno).innerHTML = "<span>剩余容量：</span>" + (capacity + 1);
             },
-            error:function (xhr,status,error){
-                if(xhr.status==500)
-                {
+            error: function (xhr, status, error) {
+                if (xhr.status == 500) {
                     alert("服务器故障，请联系开发者！");
-                }
-                else
-                {
+                } else {
                     alert("操作失败 !");
                 }
             }
         });
     }
-    function ensure_select(cno,semester,cname,clocation,capacity,self) {
+
+    function ensure_select(cno, semester, cname, clocation, capacity, self) {
         $.ajax({
-            url:"${pageContext.request.contextPath}/select_course",
-            data:{type:"ensure",cno:cno,semester:semester},
-            type:"post",
-            success:function (data,textStatus,XMLHttpRequest) {
-                var id="status-"+cno;
+            url: "${pageContext.request.contextPath}/select_course",
+            data: {type: "ensure", cno: cno, semester: semester},
+            type: "post",
+            success: function (data, textStatus, XMLHttpRequest) {
+                var id = "status-" + cno;
                 console.log(id);
-                document.getElementById(id).innerHTML="<span>选课状态：已选课程</span>";
-                self.setAttribute("onclick","cancle_select('"+cno+"','"+semester+"','"+cname+"','"+clocation+"',"+(capacity-1)+",this)");
-                self.innerText="退选课程";
+                document.getElementById(id).innerHTML = "<span>选课状态：已选课程</span>";
+                self.setAttribute("onclick", "cancle_select('" + cno + "','" + semester + "','" + cname + "','" + clocation + "'," + (capacity - 1) + ",this)");
+                self.innerText = "退选课程";
                 //创建一个新的已选课程的信息到列表
-                var newli=document.createElement("li");
-                var cname_div=document.createElement("div");
-                var clocation_div=document.createElement("div");
-                newli.setAttribute("id","selected-"+cno);
-                newli.setAttribute("class","have_selected");
-                cname_div.setAttribute("class","cname_have_selected");
-                clocation_div.setAttribute("class","clocation_have_selected");
-                cname_div.innerText=cname;
-                clocation_div.innerText=clocation;
+                var newli = document.createElement("li");
+                var cname_div = document.createElement("div");
+                var clocation_div = document.createElement("div");
+                newli.setAttribute("id", "selected-" + cno);
+                newli.setAttribute("class", "have_selected");
+                cname_div.setAttribute("class", "cname_have_selected");
+                clocation_div.setAttribute("class", "clocation_have_selected");
+                cname_div.innerText = cname;
+                clocation_div.innerText = clocation;
                 newli.append(cname_div);
                 newli.append(clocation_div);
                 document.getElementById("selected_course_list").appendChild(newli);
-                document.getElementById("capacity-"+cno).innerHTML="<span>剩余容量：</span>"+(capacity-1);
+                document.getElementById("capacity-" + cno).innerHTML = "<span>剩余容量：</span>" + (capacity - 1);
                 alert("选课成功!");
             },
-            error:function (xhr,status,error){
-                if(xhr.status==500)
-                {
+            error: function (xhr, status, error) {
+                if (xhr.status == 500) {
                     alert("服务器故障，请联系开发者！");
-                }
-                else
-                {
+                } else {
                     alert("操作失败 !");
                 }
             }
@@ -129,23 +124,30 @@
                                 <div class="course_college"><span>课程名称：</span>${course.getCname()}</div>
                                 <div class="course_college"><span>任课教师：</span>${course.getTname()}</div>
                                 <div class="course_college"><span>上课地点：</span>${course.getLocation()}</div>
-                                <div class="course_college" id="capacity-${course.getCno()}"><span>剩余容量：</span>${course.getCapacity()}</div>
+                                <div class="course_college" id="capacity-${course.getCno()}">
+                                    <span>剩余容量：</span>${course.getCapacity()}</div>
                                 <div class="course_description">
                                     <span>课程描述</span><br>
                                         ${course.getIntroduction()}
                                 </div>
                                 <c:if test="${course.getIsselected()==1}">
-                                    <div class="course_cno" id="status-${course.getCno()}"><span>选课状态：已选课程</span></div>
+                                    <div class="course_cno" id="status-${course.getCno()}">
+                                        <span>选课状态：已选课程</span></div>
                                     <div class="course_operation" id="operation-${course.getCno()}">
                                         <button class="btn btn-default"
-                                                onclick="cancle_select('${course.getCno()}','${course.getSemester()}','${course.getCname()}','${course.getLocation()}',${course.getCapacity()},this)">退选课程</button>
+                                                onclick="cancle_select('${course.getCno()}','${course.getSemester()}','${course.getCname()}','${course.getLocation()}',${course.getCapacity()},this)">
+                                            退选课程
+                                        </button>
                                     </div>
                                 </c:if>
                                 <c:if test="${course.getIsselected()==0}">
-                                    <div class="course_cno" id="status-${course.getCno()}"><span>选课状态：未选课程</span></div>
+                                    <div class="course_cno" id="status-${course.getCno()}">
+                                        <span>选课状态：未选课程</span></div>
                                     <div class="course_operation" id="operation-${course.getCno()}">
                                         <button class="btn btn-default"
-                                                onclick="ensure_select('${course.getCno()}','${course.getSemester()}','${course.getCname()}','${course.getLocation()}',${course.getCapacity()},this)">选择课程</button>
+                                                onclick="ensure_select('${course.getCno()}','${course.getSemester()}','${course.getCname()}','${course.getLocation()}',${course.getCapacity()},this)">
+                                            选择课程
+                                        </button>
                                     </div>
                                 </c:if>
                             </div>
@@ -170,7 +172,7 @@
                                         ${course.getCname()}
                                 </div>
                                 <div class="clocation_have_selected">
-                                    ${course.getLocation()}
+                                        ${course.getLocation()}
                                 </div>
                             </li>
                         </c:if>

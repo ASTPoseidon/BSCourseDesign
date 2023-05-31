@@ -73,11 +73,11 @@ public class select_course extends HttpServlet {
         HttpSession session = request.getSession();
         if (session == null) {
             response.setStatus(302);
-            response.sendRedirect(request.getContextPath() + "/index.jsp_bak");
+            response.sendRedirect(request.getContextPath() + "/index.jsp");
         }
         Student student = (Student) session.getAttribute("userinfo");
         if (student == null)
-            response.sendRedirect(request.getContextPath() + "/index.jsp_bak");
+            response.sendRedirect(request.getContextPath() + "/index.jsp");
         String major = student.getMajor();
         String sno = student.getSno();
         SemesterDB semesterDB = new SemesterDB();

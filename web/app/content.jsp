@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <% request.setCharacterEncoding("utf-8");%>
 <jsp:include page="include/htmlHead.jsp">
-    <jsp:param name="title" value="盗版教务管理系统"></jsp:param>
+    <jsp:param name="title" value="选课系统"></jsp:param>
 </jsp:include>
 <c:if test="${!empty userinfo}">
     <c:if test='${userinfo.type=="student"}'>
@@ -41,7 +41,7 @@
 </c:if>
 <c:if test="${empty userinfo}">
     <script type="text/javascript">
-        window.location.href = "../index.jsp_bak";
+        window.location.href = "../index.jsp;
     </script>
 </c:if>
 <%@include file="include/htmlFooter.jsp" %>

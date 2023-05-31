@@ -38,7 +38,7 @@ public class content extends HttpServlet {
                 if (semester == null) {
                     response.setStatus(500);
                     PrintWriter printWriter = response.getWriter();
-                    printWriter.print("<script>alert('学期表出现错误！请联系管理员！');window.location.href='" + request.getContextPath() + "/index.jsp_bak';</script>");
+                    printWriter.print("<script>alert('学期表出现错误！请联系管理员！');window.location.href='" + request.getContextPath() + "/index.jsp';</script>");
                     printWriter.flush();
                     printWriter.close();
                 }

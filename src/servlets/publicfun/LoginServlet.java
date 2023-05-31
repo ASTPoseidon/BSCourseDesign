@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
             User user = userDB.login(account, password, type);
             if (user == null) {
                 PrintWriter printWriter = response.getWriter();
-                printWriter.print("<script type='text/javascript'>alert('用户名或者密码错误！');window.location.href='" + request.getContextPath() + "/index.jsp_bak'</script>");
+                printWriter.print("<script type='text/javascript'>alert('用户名或者密码错误！');window.location.href='" + request.getContextPath() + "/index.jsp'</script>");
                 printWriter.flush();
                 printWriter.close();
             }
@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
                 Student student = studentDB.getInfo(user.getAccount());
                 if (student == null) {
                     PrintWriter printWriter = response.getWriter();
-                    printWriter.print("<script type='text/javascript'>alert('没有您的登录信息，请联系管理员！');window.location.href='" + request.getContextPath() + "/index.jsp_bak'</script>");
+                    printWriter.print("<script type='text/javascript'>alert('没有您的登录信息，请联系管理员！');window.location.href='" + request.getContextPath() + "/index.jsp'</script>");
                     printWriter.flush();
                     printWriter.close();
                 } else {
@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet {
                     }
                     if (semester == null) {
                         PrintWriter printWriter = response.getWriter();
-                        printWriter.print("<script type='text/javascript'>alert('学期列表出现错误，请联系管理员！');window.location.href='" + request.getContextPath() + "/index.jsp_bak'</script>");
+                        printWriter.print("<script type='text/javascript'>alert('学期列表出现错误，请联系管理员！');window.location.href='" + request.getContextPath() + "/index.jsp'</script>");
                         printWriter.flush();
                         printWriter.close();
                         response.setStatus(500);
@@ -78,7 +78,7 @@ public class LoginServlet extends HttpServlet {
                 Teacher teacher = teacherDB.getInfo(user.getAccount());
                 if (teacher == null) {
                     PrintWriter printWriter = response.getWriter();
-                    printWriter.print("<script type='text/javascript'>alert('没有您的登录信息，请联系管理员！');window.location.href='" + request.getContextPath() + "/index.jsp_bak'</script>");
+                    printWriter.print("<script type='text/javascript'>alert('没有您的登录信息，请联系管理员！');window.location.href='" + request.getContextPath() + "/index.jsp'</script>");
                     printWriter.flush();
                     printWriter.close();
                 } else {
@@ -91,7 +91,7 @@ public class LoginServlet extends HttpServlet {
                     }
                     if (semester == null) {
                         PrintWriter printWriter = response.getWriter();
-                        printWriter.print("<script type='text/javascript'>alert('学期列表出现错误，请联系管理员！');window.location.href='" + request.getContextPath() + "/index.jsp_bak'</script>");
+                        printWriter.print("<script type='text/javascript'>alert('学期列表出现错误，请联系管理员！');window.location.href='" + request.getContextPath() + "/index.jsp'</script>");
                         printWriter.flush();
                         printWriter.close();
                         response.setStatus(500);
@@ -108,7 +108,7 @@ public class LoginServlet extends HttpServlet {
                 Teacher teacher = teacherDB.getInfo(user.getAccount());
                 if (teacher == null) {
                     PrintWriter printWriter = response.getWriter();
-                    printWriter.print("<script type='text/javascript'>alert('没有您的登录信息，请联系管理员！');window.location.href='" + request.getContextPath() + "/index.jsp_bak'</script>");
+                    printWriter.print("<script type='text/javascript'>alert('没有您的登录信息，请联系管理员！');window.location.href='" + request.getContextPath() + "/index.jsp'</script>");
                     printWriter.flush();
                     printWriter.close();
                 } else {
@@ -124,7 +124,7 @@ public class LoginServlet extends HttpServlet {
                     }
                     if (semester == null) {
                         PrintWriter printWriter = response.getWriter();
-                        printWriter.print("<script type='text/javascript'>alert('学期列表出现错误，请联系管理员！');window.location.href='" + request.getContextPath() + "/index.jsp_bak'</script>");
+                        printWriter.print("<script type='text/javascript'>alert('学期列表出现错误，请联系管理员！');window.location.href='" + request.getContextPath() + "/index.jsp'</script>");
                         printWriter.flush();
                         printWriter.close();
                         response.setStatus(500);

@@ -1,5 +1,5 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%request.setCharacterEncoding("utf-8");%>
 <jsp:include page="../include/htmlHead.jsp">
     <jsp:param name="title" value="授课信息查看"></jsp:param>
@@ -27,7 +27,9 @@
                                 <div class="course_college"><span>教学周：</span>${course.getWeektime()}</div>
                                 <div class="course_college"><span>课程容量：</span>${course.getCapacity()}</div>
                                 <button class="btn btn-default" style="float:right;"
-                                                onclick="runinfo('${course.getCno()}','${course.getSemester()}','${course.getWeektime()}')">授课时间表</button>
+                                        onclick="runinfo('${course.getCno()}','${course.getSemester()}','${course.getWeektime()}')">
+                                    授课时间表
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -36,36 +38,36 @@
         </div>
         <div class="col-md-3 column">
             <script>
-                function runinfo(cnovalue,semesterval,weektime) {
+                function runinfo(cnovalue, semesterval, weektime) {
                     $.ajax({
-                        url:"${pageContext.request.contextPath}/teachlist",
-                        data:{cno:cnovalue,semester:semesterval},
-                        type:'post',
-                        success:function(data,textStatus,XMLHttpRequest){
-                            document.getElementById("weektime").innerText=weektime;
-                            document.getElementById("timelist").innerHTML="";
-                            var jsonarr=JSON.parse(data);
-                            var parent=document.getElementById("timelist");
-                            for(var i=0;i<jsonarr.length;i++)
-                            {
-                                var newitem=document.createElement("div");
-                                newitem.setAttribute("class","run-week");
-                                newitem.innerText=jsonarr[i];
+                        url: "${pageContext.request.contextPath}/teachlist",
+                        data: {cno: cnovalue, semester: semesterval},
+                        type: 'post',
+                        success: function (data, textStatus, XMLHttpRequest) {
+                            document.getElementById("weektime").innerText = weektime;
+                            document.getElementById("timelist").innerHTML = "";
+                            var jsonarr = JSON.parse(data);
+                            var parent = document.getElementById("timelist");
+                            for (var i = 0; i < jsonarr.length; i++) {
+                                var newitem = document.createElement("div");
+                                newitem.setAttribute("class", "run-week");
+                                newitem.innerText = jsonarr[i];
                                 parent.append(newitem);
                             }
-                            document.getElementById("background").setAttribute("style","display:block;")
+                            document.getElementById("background").setAttribute("style", "display:block;")
                             $("#modal-container-28819").addClass("in");
-                            document.getElementById("modal-container-28819").setAttribute("style","display:block;");
+                            document.getElementById("modal-container-28819").setAttribute("style", "display:block;");
                         },
-                        error: function(xhr,status,error){
+                        error: function (xhr, status, error) {
                             alert(error);
                         }
                     });
                 }
+
                 function closedetail() {
                     $("#modal-container-28819").removeClass("in");
-                    document.getElementById("background").setAttribute("style","display:none;")
-                    document.getElementById("modal-container-28819").setAttribute("style","display:none;");
+                    document.getElementById("background").setAttribute("style", "display:none;")
+                    document.getElementById("modal-container-28819").setAttribute("style", "display:none;");
                 }
             </script>
         </div>
@@ -88,7 +90,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="closedetail()">关闭</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="closedetail()">关闭
+                    </button>
                 </div>
             </div>
         </div>

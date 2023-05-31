@@ -6,7 +6,7 @@
         <div class="navbar-header">
             <a class="navbar-brand logo_2">
                 <img src="${pageContext.request.contextPath}/images/logo_jw_w.png" style="margin-top:-3px">
-                <span id="xtmc">盗版教务管理系统</span>
+                <span id="xtmc">选课系统</span>
             </a>
         </div>
         <ul class="nav navbar-nav navbar-right  hidden-xs">

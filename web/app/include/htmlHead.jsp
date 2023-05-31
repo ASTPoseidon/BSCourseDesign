@@ -39,6 +39,6 @@
 <c:if test="${empty userinfo}">
 <script type="text/javascript">
     alert("登录已经过期！");
-    window.location.href = "../../index.jsp_bak";
+    window.location.href = "../../index.jsp";
 </script>
 </c:if>

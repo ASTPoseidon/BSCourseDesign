@@ -26,7 +26,7 @@
 </c:if>
 <c:if test="${empty userinfo}">
     <script type="text/javascript">
-        window.location.href = "../index.jsp_bak"
+        window.location.href = "../index.jsp"
     </script>
 </c:if>
 <%@include file="include/htmlFooter.jsp" %>

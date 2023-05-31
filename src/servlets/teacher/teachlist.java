@@ -45,7 +45,7 @@ public class teachlist extends HttpServlet {
         if (teacher == null) {
             PrintWriter printWriter = response.getWriter();
             printWriter.print("<script>alert('登录信息已过期！');" +
-                    "window.location.href='" + request.getContextPath() + "/index.jsp_bak';</script>");
+                    "window.location.href='" + request.getContextPath() + "/index.jsp';</script>");
             printWriter.flush();
             printWriter.close();
         } else {

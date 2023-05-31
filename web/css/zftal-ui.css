@@ -508,7 +508,7 @@ li {
 
 .tag-list li span.cur,
 .tag-list li a.cur {
-    background: #0483d4;
+    background: #4cae4c;
     color: #fff;
 }
 
@@ -1017,7 +1017,7 @@ li {
 }
 
 .cond-bar .btn-group .btn.btn-default.active {
-    background-color: #0483d4;
+    background-color: #4cae4c;
     color: #fff;
     border-color: #285e8e;
 }
@@ -1245,7 +1245,7 @@ li {
 }
 
 .top1 {
-    background: #0483d4;
+    background: #4cae4c;
     min-height: 60px;
     border-bottom: 0px none;
     margin-bottom: 0;
@@ -1266,7 +1266,7 @@ li {
     -o-border-radius: 1px;
     border-radius: 1px;
     background: #b4d1eb url(../images/ico1.png) 5px center no-repeat;
-    color: #0483d4;
+    color: #4cae4c;
     font: normal 12px/33px SimSun;
     text-indent: 35px;
     padding: 0px;
@@ -1433,7 +1433,7 @@ li {
 }
 
 .dropdown-submenu:hover > a:after {
-    border-left-color: #0483d4;
+    border-left-color: #4cae4c;
 }
 
 .dropdown-submenu.pull-left {
@@ -1452,7 +1452,7 @@ li {
 /*----------------------- 报名设置页面公共头部 -----------------*/
 
 .top2 {
-    background: #0483d4;
+    background: #4cae4c;
     margin-bottom: 15px;
 }
 
@@ -3457,7 +3457,7 @@ h4.title {
 }
 
 .sl_log_rt .sl_warning {
-    border: 1px solid #f3e6a1;
+    border: 1px solid #4cae4c;
     line-height: 24px;
     padding: 0px 10px;
     margin-bottom: 10px;
@@ -4350,7 +4350,7 @@ h4.title {
 .fzss .fzss_title {
     width: 100%;
     height: 60px;
-    background: #0483d4;
+    background: #4cae4c;
     color: #fff;
     cursor: pointer;
     color: #ffffff;
@@ -4514,8 +4514,8 @@ h4.title {
 
 .index3_con .index_title ul li.on a,
 .index3_con .index_title span {
-    color: #0483d4;
-    border-bottom: 2px solid #0483d4;
+    color: #4cae4c;
+    border-bottom: 2px solid #4cae4c;
     font-weight: bold
 }
 
@@ -4560,7 +4560,7 @@ h4.title {
 }
 
 .index3_con .index3_imgnews .hd a:hover i {
-    color: #0483d4
+    color: #4cae4c
 }
 
 .index3_con .index3_imgnews .hd a.prev i {
@@ -4613,7 +4613,7 @@ h4.title {
 
 .index3_con .index3_lct .index3_list .list-group-item .fa {
     float: left;
-    color: #0483d4;
+    color: #4cae4c;
     margin: 12px 5px;
 }
 
@@ -4637,7 +4637,7 @@ h4.title {
     display: block;
     width: 50px;
     height: 25px;
-    background: #0483d4;
+    background: #4cae4c;
     text-align: center;
     color: #fff;
     line-height: 25px;
@@ -5754,7 +5754,7 @@ textarea {
 .language-select {
     border: 0 none;
     border-radius: 1px;
-    color: #0483d4;
+    color: #4cae4c;
     font: 14px/20px SimSun;
     height: 32px;
     margin: 0;
@@ -5779,7 +5779,7 @@ em.red2 {
     color: #fff;
     font: normal 12px/20px microsoft YaHei;
     margin: 15px 0 0;
-    background-color: #0483d4;
+    background-color: #4cae4c;
     padding: 10px;
 }
 
@@ -6173,7 +6173,7 @@ input {
 
 @media (max-width: 767px) {
     .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-        background-color: #0483d4;
+        background-color: #4cae4c;
         color: #fff;
     }
 
@@ -6336,7 +6336,7 @@ input {
         color: #fff;
         font: normal 12px/20px microsoft YaHei;
         margin: 15px 0 0;
-        background-color: #0483d4;
+        background-color: #4cae4c;
         padding: 10px;
     }
 
@@ -6465,7 +6465,7 @@ input {
     .navbar-default .navbar-nav > .open > a,
     .navbar-default .navbar-nav > .open > a:hover,
     .navbar-default .navbar-nav > .open > a:focus {
-        background: #0483d4;
+        background: #4cae4c;
         color: #fff;
     }
 
@@ -6825,7 +6825,7 @@ input {
 }
 
 .btn-primary.active {
-    background-color: #0483d4;
+    background-color: #4cae4c;
 }
 
 .formlist input[type=radio] {
@@ -7144,11 +7144,11 @@ input {
     }
 
     .dropdown-submenu2.current > a {
-        color: #0483d4 !important;
+        color: #4cae4c !important;
     }
 
     .dropdown-submenu2.current > a:after {
-        border-left-color: #0483d4;
+        border-left-color: #4cae4c;
     }
 }
 
@@ -7331,7 +7331,7 @@ textarea::-webkit-input-placeholder {
 }
 
 .chose-tag .item.active {
-    background: #0483d4;
+    background: #4cae4c;
     color: #fff;
 }
 

@@ -1,12 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%request.setCharacterEncoding("utf-8");%>
 <div class="navbar navbar-default navbar-static-top top1">
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand logo_2">
                 <img src="${pageContext.request.contextPath}/images/logo_jw_w.png" style="margin-top:-3px">
-                <span id="xtmc">盗版教务管理系统</span>
+                <span id="xtmc">选课系统</span>
             </a>
         </div>
         <ul class="nav navbar-nav navbar-right  hidden-xs">
@@ -34,7 +34,8 @@
                     <a href="${pageContext.request.contextPath}/content">首页</a>
                 </li>
                 <li class="dropdown">
-                    <a id="drop1" href="" role="button" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">信息维护
+                    <a id="drop1" href="" role="button" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-expanded="false">信息维护
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
@@ -53,7 +54,8 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a id="drop" href="" role="button" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">信息查询
+                    <a id="drop" href="" role="button" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-expanded="false">信息查询
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">

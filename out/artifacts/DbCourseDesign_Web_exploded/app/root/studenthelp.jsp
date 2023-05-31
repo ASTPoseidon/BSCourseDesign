@@ -1,5 +1,5 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%request.setCharacterEncoding("utf-8");%>
 <jsp:include page="../include/htmlHead.jsp">
     <jsp:param name="title" value="学生求助"></jsp:param>
@@ -12,7 +12,8 @@
         <div class="col-md-8 column">
             <div class="new_course_search_div">
                 <form action="${pageContext.request.contextPath}/searchhelp" method="post">
-                    <input type="text" name="sno" class="form-control tno-search" placeholder="搜索学生学号" style="height: 34px;"/>
+                    <input type="text" name="sno" class="form-control tno-search" placeholder="搜索学生学号"
+                           style="height: 34px;"/>
                     <label style="line-height: 100%;margin-right: 10px;">选择状态: </label>
                     <select class="form-control college-search" id="college" name="status">
                         <option value="all">全部</option>
@@ -42,7 +43,9 @@
                                 </div>
                                 <c:if test="${help.getStatus()==0}">
                                     <div class="course_operation" id="help-${help.getId()}">
-                                        <button class="btn btn-default" onclick="access('help-${help.getId()}','${help.getId()}')">完成处理</button>
+                                        <button class="btn btn-default"
+                                                onclick="access('help-${help.getId()}','${help.getId()}')">完成处理
+                                        </button>
                                     </div>
                                 </c:if>
                             </div>
@@ -50,12 +53,11 @@
                     </div>
                 </c:forEach>
                 <script type="text/javascript">
-                    function access(id,idvalue) {
-                        $.post("${pageContext.request.contextPath}/handlehelp",{helpid:idvalue},function (data,status) {
-                            if(status=="success")
-                            {
+                    function access(id, idvalue) {
+                        $.post("${pageContext.request.contextPath}/handlehelp", {helpid: idvalue}, function (data, status) {
+                            if (status == "success") {
                                 alert("操作成功!");
-                                document.getElementById(id).style.display="none";
+                                document.getElementById(id).style.display = "none";
                             }
                         })
                     }
@@ -66,4 +68,4 @@
         </div>
     </div>
 </div>
-<%@include file="../include/htmlFooter.jsp"%>
+<%@include file="../include/htmlFooter.jsp" %>
