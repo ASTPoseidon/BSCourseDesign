@@ -1,4 +1,5 @@
 package model;
+
 public class Student {
     private Integer id;
     private String sno;
@@ -7,7 +8,7 @@ public class Student {
     private String sex;
     private String major;
     private String klass;
-    private String type="student";
+    private String type = "student";
 
 
     private String province;
@@ -35,52 +36,52 @@ public class Student {
         return id;
     }
 
-    public String getCollege() {
-        return college;
-    }
-
-    public String getKlass() {
-        return klass;
-    }
-
-    public String getMajor() {
-        return major;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public String getSname() {
-        return sname;
-    }
-
-    public String getSno() {
-        return sno;
-    }
-
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getCollege() {
+        return college;
     }
 
     public void setCollege(String college) {
         this.college = college;
     }
 
+    public String getKlass() {
+        return klass;
+    }
+
     public void setKlass(String klass) {
         this.klass = klass;
+    }
+
+    public String getMajor() {
+        return major;
     }
 
     public void setMajor(String major) {
         this.major = major;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
     public void setSex(String sex) {
         this.sex = sex;
     }
 
+    public String getSname() {
+        return sname;
+    }
+
     public void setSname(String sname) {
         this.sname = sname;
+    }
+
+    public String getSno() {
+        return sno;
     }
 
     public void setSno(String sno) {
@@ -91,95 +92,95 @@ public class Student {
         return birthday;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
     public String getCity() {
         return city;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public String getNation() {
-        return nation;
-    }
-
-    public String getForeignlanguage() {
-        return foreignlanguage;
-    }
-
-    public String getHighschool() {
-        return highschool;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getPoliticalstatus() {
-        return politicalstatus;
-    }
-
-    public String getProvince() {
-        return province;
-    }
-
-    public String getQq() {
-        return qq;
-    }
-
-    public String getWechat() {
-        return wechat;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
-
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public void setHighschool(String highschool) {
-        this.highschool = highschool;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
+    public String getNation() {
+        return nation;
     }
 
     public void setNation(String nation) {
         this.nation = nation;
     }
 
+    public String getForeignlanguage() {
+        return foreignlanguage;
+    }
+
     public void setForeignlanguage(String foreignlanguage) {
         this.foreignlanguage = foreignlanguage;
+    }
+
+    public String getHighschool() {
+        return highschool;
+    }
+
+    public void setHighschool(String highschool) {
+        this.highschool = highschool;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPoliticalstatus() {
+        return politicalstatus;
     }
 
     public void setPoliticalstatus(String politicalstatus) {
         this.politicalstatus = politicalstatus;
     }
 
+    public String getProvince() {
+        return province;
+    }
+
     public void setProvince(String province) {
         this.province = province;
+    }
+
+    public String getQq() {
+        return qq;
     }
 
     public void setQq(String qq) {
         this.qq = qq;
     }
 
+    public String getWechat() {
+        return wechat;
+    }
+
     public void setWechat(String wechat) {
         this.wechat = wechat;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

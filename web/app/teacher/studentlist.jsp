@@ -1,11 +1,11 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%request.setCharacterEncoding("utf-8");%>
 <jsp:include page="../include/htmlHead.jsp">
     <jsp:param name="title" value="学生信息查询"></jsp:param>
 </jsp:include>
 <style>
-    .temp{
+    .temp {
         height: 34px;
         position: relative;
         top: -2px;

@@ -41,7 +41,7 @@
 </c:if>
 <c:if test="${empty userinfo}">
     <script type="text/javascript">
-        window.location.href="${pageContext.request.contextPath}/index.jsp";
+        window.location.href="../index.jsp_bak";
     </script>
 </c:if>
 <%@include file="include/htmlFooter.jsp"%>

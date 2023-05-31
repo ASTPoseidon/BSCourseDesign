@@ -14,19 +14,17 @@ import java.sql.SQLException;
 @WebServlet("/accessnewcourse")
 public class accessnewcourse extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String cno=request.getParameter("cno");
+        String cno = request.getParameter("cno");
         response.setCharacterEncoding("utf-8");
         response.setContentType("text/html");
-        CourseDB courseDB=new CourseDB();
+        CourseDB courseDB = new CourseDB();
         try {
-            Boolean ok=courseDB.accessCourse(cno);
-            if(ok)
-            {
+            Boolean ok = courseDB.accessCourse(cno);
+            if (ok) {
                 response.setStatus(200);
-            }
-            else{
+            } else {
                 response.setStatus(500);
-                PrintWriter printWriter=response.getWriter();
+                PrintWriter printWriter = response.getWriter();
                 printWriter.println("<script>alert('操作失败');</script>");
                 printWriter.flush();
                 printWriter.close();
@@ -35,7 +33,8 @@ public class accessnewcourse extends HttpServlet {
             e.printStackTrace();
         }
     }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request,response);
+        doGet(request, response);
     }
 }

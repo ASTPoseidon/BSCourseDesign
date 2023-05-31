@@ -1,5 +1,5 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%request.setCharacterEncoding("utf-8");%>
 <jsp:include page="../include/htmlHead.jsp">
     <jsp:param name="title" value="课程信息"></jsp:param>
@@ -56,10 +56,12 @@
                                         ${course.getIntroduction()}
                                 </div>
                                 <c:if test="${course.getStatus()==0}">
-                                    <div class="course_cno" id="status-${course.getCno()}"><span>课程状态：未运行课程</span></div>
+                                    <div class="course_cno" id="status-${course.getCno()}">
+                                        <span>课程状态：未运行课程</span></div>
                                     <div class="course_operation" id="operation-${course.getCno()}">
                                         <button class="btn btn-default"
-                                                onclick="inputarrange('${course.getCno()}')">安排课程</button>
+                                                onclick="inputarrange('${course.getCno()}')">安排课程
+                                        </button>
                                     </div>
                                 </c:if>
                                 <c:if test="${course.getStatus()==-1}">
@@ -77,47 +79,48 @@
         <div class="col-md-3 column">
             <script>
                 function arrange() {
-                    var cnovalue=$("#arrange_cno").val();
-                    var tnovalue=$("#arrange_tno").val();
-                    var capacityvalue=$("#arrange_capacity").val();
-                    var start=$("#startweek").val();
-                    var end=$("#endweek").val();
-                    var locationvalue=$("#location").val();
-                    var rtime=$("#runtime").val();
-                    if(cnovalue==""||tnovalue==""||capacityvalue==""||start==""||end==""||locationvalue==""||rtime=="")
+                    var cnovalue = $("#arrange_cno").val();
+                    var tnovalue = $("#arrange_tno").val();
+                    var capacityvalue = $("#arrange_capacity").val();
+                    var start = $("#startweek").val();
+                    var end = $("#endweek").val();
+                    var locationvalue = $("#location").val();
+                    var rtime = $("#runtime").val();
+                    if (cnovalue == "" || tnovalue == "" || capacityvalue == "" || start == "" || end == "" || locationvalue == "" || rtime == "")
                         alert("请您填写完整信息");
-                    else{
+                    else {
                         $.ajax({
-                            url:"${pageContext.request.contextPath}/arrangecourse",
-                            data:{cno:cnovalue,tno:tnovalue,capacity:capacityvalue,startweek:start,
-                                endweek:end,location:locationvalue,runtime:rtime},
-                            type:'post',
-                            success:function(data,textStatus,XMLHttpRequest){
-                                alert("安排上了！");
-                                value1="#operation-"+cnovalue;
-                                value2="#status-"+cnovalue;
-                               $(value1).css("display","none");
-                               $(value2).html("<span>课程状态：已运行课程</span>");
-                               closedetail();
+                            url: "${pageContext.request.contextPath}/arrangecourse",
+                            data: {
+                                cno: cnovalue, tno: tnovalue, capacity: capacityvalue, startweek: start,
+                                endweek: end, location: locationvalue, runtime: rtime
                             },
-                            error: function(xhr,status,error) {
+                            type: 'post',
+                            success: function (data, textStatus, XMLHttpRequest) {
+                                alert("安排上了！");
+                                value1 = "#operation-" + cnovalue;
+                                value2 = "#status-" + cnovalue;
+                                $(value1).css("display", "none");
+                                $(value2).html("<span>课程状态：已运行课程</span>");
+                                closedetail();
+                            },
+                            error: function (xhr, status, error) {
                                 if (xhr.status == 500) {
                                     alert("服务器异常！");
-                                }
-                                else if (xhr.status == 301) {
+                                } else if (xhr.status == 301) {
                                     alert("请检查学期表！");
-                                }
-                                else if (xhr.status == 404) {
+                                } else if (xhr.status == 404) {
                                     alert("没有找到老师的相关信息")
                                 }
                             }
                         });
                     }
                 }
+
                 function closedetail() {
                     $("#modal-container-28819").removeClass("in");
-                    document.getElementById("background").setAttribute("style","display:none;")
-                    document.getElementById("modal-container-28819").setAttribute("style","display:none;");
+                    document.getElementById("background").setAttribute("style", "display:none;")
+                    document.getElementById("modal-container-28819").setAttribute("style", "display:none;");
                 }
             </script>
         </div>
@@ -126,9 +129,9 @@
 <script>
     function inputarrange(cno) {
         $("#arrange_cno").val(cno);
-        document.getElementById("background").setAttribute("style","display:block;")
+        document.getElementById("background").setAttribute("style", "display:block;")
         $("#modal-container-28819").addClass("in");
-        document.getElementById("modal-container-28819").setAttribute("style","display:block;");
+        document.getElementById("modal-container-28819").setAttribute("style", "display:block;");
     }
 </script>
 <div class="col-md-12 column">
@@ -142,28 +145,32 @@
                     </h3>
                 </div>
                 <div class="modal-body">
-                        <input type="hidden" name="arrange_cno" value=""  id="arrange_cno"/>
-                        <input type="text" name="arrange_tno" class="form-control arragementinfo"
-                               placeholder="输入教师工号" style="height: 34px;" id="arrange_tno" required="required"/>
-                        <input type="text" name="capacity" class="form-control arragementinfo"
-                               placeholder="输入班级容量" style="height: 34px;" id="arrange_capacity" required="required"/>
-                        <input type="text" name="startweek" class="form-control arragementinfo" id="startweek"
-                               placeholder="教学起始周" style="height: 34px;width: 37%;margin-right: 5%;display: inline-block"
-                               required="required" />
-                        <input type="text" name="endweek" class="form-control arragementinfo" id="endweek"
-                               placeholder="教学结束周" style="height: 34px; width: 37%;display: inline-block" required="required"/>
-                        <input type="text" name="location" class="form-control arragementinfo" id="location"
-                               placeholder="上课地点" style="height: 34px;" required="required"/>
-                        <input type="text" name="runtime" class="form-control arragementinfo" id="runtime"
-                               placeholder="1-3-5 表示周一第三节课到第五节课，一周多节用 % 分开" style="height: 34px;"
-                               required="required"/>
-                        <div style="text-align: right;">
-                            <button class="btn btn-default"
-                                    onclick="arrange()">安排课程</button>
-                        </div>
+                    <input type="hidden" name="arrange_cno" value="" id="arrange_cno"/>
+                    <input type="text" name="arrange_tno" class="form-control arragementinfo"
+                           placeholder="输入教师工号" style="height: 34px;" id="arrange_tno" required="required"/>
+                    <input type="text" name="capacity" class="form-control arragementinfo"
+                           placeholder="输入班级容量" style="height: 34px;" id="arrange_capacity" required="required"/>
+                    <input type="text" name="startweek" class="form-control arragementinfo" id="startweek"
+                           placeholder="教学起始周"
+                           style="height: 34px;width: 37%;margin-right: 5%;display: inline-block"
+                           required="required"/>
+                    <input type="text" name="endweek" class="form-control arragementinfo" id="endweek"
+                           placeholder="教学结束周" style="height: 34px; width: 37%;display: inline-block"
+                           required="required"/>
+                    <input type="text" name="location" class="form-control arragementinfo" id="location"
+                           placeholder="上课地点" style="height: 34px;" required="required"/>
+                    <input type="text" name="runtime" class="form-control arragementinfo" id="runtime"
+                           placeholder="1-3-5 表示周一第三节课到第五节课，一周多节用 % 分开" style="height: 34px;"
+                           required="required"/>
+                    <div style="text-align: right;">
+                        <button class="btn btn-default"
+                                onclick="arrange()">安排课程
+                        </button>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="closedetail()">关闭</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="closedetail()">关闭
+                    </button>
                 </div>
             </div>
         </div>

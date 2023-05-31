@@ -29,36 +29,36 @@ public class Course_teach {
         return semester;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public String getCname() {
-        return cname;
-    }
-
-    public String getWeektime() {
-        return weektime;
-    }
-
-    public String getTeachtime() {
-        return teachtime;
-    }
-
     public void setSemester(String semester) {
         this.semester = semester;
+    }
+
+    public String getLocation() {
+        return location;
     }
 
     public void setLocation(String location) {
         this.location = location;
     }
 
+    public String getCname() {
+        return cname;
+    }
+
     public void setCname(String cname) {
         this.cname = cname;
     }
 
+    public String getWeektime() {
+        return weektime;
+    }
+
     public void setWeektime(String weektime) {
         this.weektime = weektime;
+    }
+
+    public String getTeachtime() {
+        return teachtime;
     }
 
     public void setTeachtime(String teachtime) {

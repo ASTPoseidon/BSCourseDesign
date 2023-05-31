@@ -10,12 +10,12 @@ public class Course {
     private String settno;
     private String introduction;
 
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction;
-    }
-
     public String getIntroduction() {
         return introduction;
+    }
+
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
     }
 
     public String getSettno() {

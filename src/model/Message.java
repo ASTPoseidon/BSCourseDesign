@@ -7,18 +7,37 @@ public class Message {
     private String sendtime;
     private Integer status;
     private String title;
+
     public Integer getId() {
         return id;
     }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getSno() {
         return sno;
     }
+
+    public void setSno(String sno) {
+        this.sno = sno;
+    }
+
     public String getContent() {
         return content;
     }
 
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     public String getSendtime() {
         return sendtime;
+    }
+
+    public void setSendtime(String sendtime) {
+        this.sendtime = sendtime;
     }
 
     public String getTitle() {
@@ -29,28 +48,11 @@ public class Message {
         this.title = title;
     }
 
-    public void setSendtime(String sendtime) {
-        this.sendtime = sendtime;
+    public Integer getStatus() {
+        return status;
     }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public void setSno(String sno) {
-        this.sno = sno;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
 
     public void setStatus(Integer status) {
         this.status = status;
-    }
-
-    public Integer getStatus() {
-        return status;
     }
 }

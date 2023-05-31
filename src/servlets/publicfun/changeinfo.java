@@ -2,8 +2,6 @@ package servlets.publicfun;
 
 import DB.StudentDB;
 import DB.TeacherDB;
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import model.Student;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,7 +26,7 @@ public class changeinfo extends HttpServlet {
             TeacherDB teacherDB = new TeacherDB();
             Boolean ok = null;
             try {
-                ok = teacherDB.changeInfo(sql,account, kind, value);
+                ok = teacherDB.changeInfo(sql, account, kind, value);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -42,7 +40,7 @@ public class changeinfo extends HttpServlet {
             StudentDB studentDB = new StudentDB();
             Boolean ok = null;
             try {
-                ok = studentDB.changeInfo(sql,account, kind, value);
+                ok = studentDB.changeInfo(sql, account, kind, value);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -55,6 +53,6 @@ public class changeinfo extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+        doPost(request, response);
     }
 }

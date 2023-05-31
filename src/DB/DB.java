@@ -1,77 +1,71 @@
 package DB;
+
 import java.sql.*;
+
 public class DB {
     //初始化连接参数;
-    public static String url="jdbc:mysql://localhost:3306/db?serverTimezone=UTC&useSSL=false&characterEncoding=utf8";
-    public static String user="root";
-    public static String password="guo2086443";
+    public static String url = "jdbc:mysql://localhost:3306/db?serverTimezone=UTC&useSSL=false&characterEncoding=utf8";
+    public static String user = "root";
+    public static String password = "guo2086443";
+
     //初始化驱动加载：
-    static{
+    static {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
-    public static Connection getConnection()
-    {
+
+    public static Connection getConnection() {
         try {
-            Connection connection=DriverManager.getConnection(url,user,password);
+            Connection connection = DriverManager.getConnection(url, user, password);
             return connection;
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
-    public static void close(Connection connection,Statement st,ResultSet rs)
-    {
+
+    public static void close(Connection connection, Statement st, ResultSet rs) {
         try {
             connection.close();
             st.close();
             rs.close();
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public static void close(Connection connection,PreparedStatement st)
-    {
+
+    public static void close(Connection connection, PreparedStatement st) {
         try {
             connection.close();
             st.close();
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public static void close(Statement st)
-    {
+
+    public static void close(Statement st) {
         try {
             st.close();
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public static void close(Connection connection)
-    {
+
+    public static void close(Connection connection) {
         try {
             connection.close();
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public static void close(ResultSet resultSet)
-    {
+
+    public static void close(ResultSet resultSet) {
         try {
             resultSet.close();
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

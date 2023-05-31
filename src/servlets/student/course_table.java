@@ -1,12 +1,8 @@
 package servlets.student;
 
-import DB.CourseSemesterDB;
 import DB.SemesterDB;
 import DB.StudyCourseDB;
 import com.alibaba.fastjson.JSON;
-import model.CourseSemester;
-import model.Student;
-import model.StudyCourse;
 import view.CourseTable;
 
 import javax.servlet.ServletException;
@@ -26,22 +22,21 @@ public class course_table extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("text/html");
-        HttpSession session=request.getSession();
-        if(session==null)
-        {
-            request.getRequestDispatcher(request.getContextPath()).forward(request,response);
+        HttpSession session = request.getSession();
+        if (session == null) {
+            request.getRequestDispatcher(request.getContextPath()).forward(request, response);
         }
-        String semester=request.getParameter("semester");
-        String sno=request.getParameter("sno");
-        StudyCourseDB db=new StudyCourseDB();
-        ArrayList<CourseTable> res= null;
+        String semester = request.getParameter("semester");
+        String sno = request.getParameter("sno");
+        StudyCourseDB db = new StudyCourseDB();
+        ArrayList<CourseTable> res = null;
         try {
-            res = db.getCourseTable(semester,sno);
+            res = db.getCourseTable(semester, sno);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        String json= JSON.toJSONString(res);
-        PrintWriter printWriter=response.getWriter();
+        String json = JSON.toJSONString(res);
+        PrintWriter printWriter = response.getWriter();
         printWriter.print(json);
         printWriter.flush();
         printWriter.close();
@@ -49,19 +44,18 @@ public class course_table extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session=request.getSession();
-        if(session==null)
-        {
-            request.getRequestDispatcher(request.getContextPath()).forward(request,response);
+        HttpSession session = request.getSession();
+        if (session == null) {
+            request.getRequestDispatcher(request.getContextPath()).forward(request, response);
         }
-        SemesterDB semesterDB=new SemesterDB();
-        ArrayList<String> semesterlist=null;
+        SemesterDB semesterDB = new SemesterDB();
+        ArrayList<String> semesterlist = null;
         try {
-            semesterlist=semesterDB.getSemesterList();
+            semesterlist = semesterDB.getSemesterList();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        request.setAttribute("semesterlist",semesterlist);
-        request.getRequestDispatcher("app/student/course_table.jsp").forward(request,response);
+        request.setAttribute("semesterlist", semesterlist);
+        request.getRequestDispatcher("app/student/course_table.jsp").forward(request, response);
     }
 }

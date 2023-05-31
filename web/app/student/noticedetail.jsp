@@ -1,4 +1,4 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%request.setCharacterEncoding("utf-8");%>
 <jsp:include page="../include/htmlHead.jsp">
@@ -13,22 +13,22 @@
         </div>
         <div class="col-md-10 column">
             <c:forEach items="${noticelist}" var="notice">
-            <h1 style="text-align: center;">${notice.getTitle()}</h1>
-            <div class="fu-title">
-                <div class="people-account">
-                    <span>发布人</span>
-                    <span>root</span>
+                <h1 style="text-align: center;">${notice.getTitle()}</h1>
+                <div class="fu-title">
+                    <div class="people-account">
+                        <span>发布人</span>
+                        <span>root</span>
+                    </div>
+                    <div class="send-time">
+                        <span>发布时间</span>
+                        <span>${notice.getSendtime()}</span>
+                    </div>
                 </div>
-                <div class="send-time">
-                    <span>发布时间</span>
-                    <span>${notice.getSendtime()}</span>
-                </div>
-            </div>
-            <div class="article-content">
+                <div class="article-content">
 <pre>
-${notice.getContent()}
+        ${notice.getContent()}
 </pre>
-            </div>
+                </div>
             </c:forEach>
         </div>
         <div class="col-md-1 column">

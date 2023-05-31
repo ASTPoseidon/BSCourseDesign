@@ -1,5 +1,5 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%request.setCharacterEncoding("utf-8");%>
 <jsp:include page="../include/htmlHead.jsp">
     <jsp:param name="title" value="课程信息"></jsp:param>
@@ -37,90 +37,82 @@
                     <button type="submit" class="btn btn-default search_btn">查询</button>
                 </form>
             </div>
-<%--以下为正式内容--%>
-<div class="panel-group" id="panel-805813">
-    <c:forEach items="${courselist}" var="course">
-        <div class="panel panel-default" id="course-${course.getCno()}">
-            <div class="panel-heading">
-                <a class="panel-title collapsed" data-toggle="collapse"
-                   data-parent="#panel-805813" href="#panel-element-${course.getCno()}">
-                    <span>${course.getCname()}</span>
-                    <span style="float: right;">${course.getCno()}</span>
-                </a>
-            </div>
-            <div id="panel-element-${course.getCno()}" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <div class="course_cno"><span>课程号：</span>${course.getCno()}</div>
-                    <div class="course_college"><span>开课学院：</span>${course.getDept()}</div>
-                    <div class="course_description">
-                        <span>课程描述</span><br>
-                            ${course.getIntroduction()}
-                    </div>
-                    <c:if test="${course.getStatus()==0}">
-                        <div class="course_cno"><span>课程状态：未运行课程</span></div>
-                    </c:if>
-                    <c:if test="${course.getStatus()==-1}">
-                        <div class="course_cno"><span>课程状态：未审核课程</span></div>
-                    </c:if>
-                    <c:if test="${course.getStatus()==1}">
-                        <div class="course_cno"><span>课程状态：已运行课程</span></div>
-                        <div class="course_operation">
-                            <button class="btn btn-default"
-                                    onclick="runinfo('${course.getCno()}')">查看教学信息</button>
+            <%--以下为正式内容--%>
+            <div class="panel-group" id="panel-805813">
+                <c:forEach items="${courselist}" var="course">
+                    <div class="panel panel-default" id="course-${course.getCno()}">
+                        <div class="panel-heading">
+                            <a class="panel-title collapsed" data-toggle="collapse"
+                               data-parent="#panel-805813" href="#panel-element-${course.getCno()}">
+                                <span>${course.getCname()}</span>
+                                <span style="float: right;">${course.getCno()}</span>
+                            </a>
                         </div>
-                    </c:if>
-                </div>
+                        <div id="panel-element-${course.getCno()}" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="course_cno"><span>课程号：</span>${course.getCno()}</div>
+                                <div class="course_college"><span>开课学院：</span>${course.getDept()}</div>
+                                <div class="course_description">
+                                    <span>课程描述</span><br>
+                                        ${course.getIntroduction()}
+                                </div>
+                                <c:if test="${course.getStatus()==0}">
+                                    <div class="course_cno"><span>课程状态：未运行课程</span></div>
+                                </c:if>
+                                <c:if test="${course.getStatus()==-1}">
+                                    <div class="course_cno"><span>课程状态：未审核课程</span></div>
+                                </c:if>
+                                <c:if test="${course.getStatus()==1}">
+                                    <div class="course_cno"><span>课程状态：已运行课程</span></div>
+                                    <div class="course_operation">
+                                        <button class="btn btn-default"
+                                                onclick="runinfo('${course.getCno()}')">查看教学信息
+                                        </button>
+                                    </div>
+                                </c:if>
+                            </div>
+                        </div>
+                    </div>
+                </c:forEach>
             </div>
-        </div>
-    </c:forEach>
-</div>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
         </div>
         <div class="col-md-3 column">
             <script>
                 function runinfo(cnovalue) {
                     $.ajax({
-                        url:"${pageContext.request.contextPath}/runinfo",
-                        data:{cno:cnovalue},
-                        type:'post',
-                        dataType:'json',
-                        success:function(data,textStatus,XMLHttpRequest){
+                        url: "${pageContext.request.contextPath}/runinfo",
+                        data: {cno: cnovalue},
+                        type: 'post',
+                        dataType: 'json',
+                        success: function (data, textStatus, XMLHttpRequest) {
                             console.log(data);
                             $("#teacher").html(data[0][0]);
                             $("#tno").html(data[0][1]);
                             $("#run-week").html(data[0][2]);
-                            var html="";
-                            for(var i=1;i<data.length;i++)
-                            {
-                                html+="<span class='run-day'>"+data[i][0];
-                                html+="</span><span class='run-jie'>"+data[i][1];
-                                html+="</span><span class='run-location'>"+data[i][2];
-                                html+="</span><br>";
+                            var html = "";
+                            for (var i = 1; i < data.length; i++) {
+                                html += "<span class='run-day'>" + data[i][0];
+                                html += "</span><span class='run-jie'>" + data[i][1];
+                                html += "</span><span class='run-location'>" + data[i][2];
+                                html += "</span><br>";
                             }
                             $("#run-each").html(html);
-                            document.getElementById("background").setAttribute("style","display:block;")
+                            document.getElementById("background").setAttribute("style", "display:block;")
                             $("#modal-container-28819").addClass("in");
-                            document.getElementById("modal-container-28819").setAttribute("style","display:block;");
+                            document.getElementById("modal-container-28819").setAttribute("style", "display:block;");
                         },
-                        error: function(xhr,status,error){
+                        error: function (xhr, status, error) {
                             alert(error);
                         }
                     });
                 }
+
                 function closedetail() {
                     $("#modal-container-28819").removeClass("in");
-                    document.getElementById("background").setAttribute("style","display:none;")
-                    document.getElementById("modal-container-28819").setAttribute("style","display:none;");
+                    document.getElementById("background").setAttribute("style", "display:none;")
+                    document.getElementById("modal-container-28819").setAttribute("style", "display:none;");
                 }
             </script>
         </div>
@@ -148,7 +140,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="closedetail()">关闭</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="closedetail()">关闭
+                    </button>
                 </div>
             </div>
         </div>

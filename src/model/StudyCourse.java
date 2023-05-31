@@ -9,6 +9,7 @@ public class StudyCourse {
     //下面的是view 属性
     private String sname;
     private String cname;
+
     public String getCname() {
         return cname;
     }
@@ -29,28 +30,28 @@ public class StudyCourse {
         return semester;
     }
 
-    public String getCno() {
-        return cno;
-    }
-
-    public String getSno() {
-        return sno;
-    }
-
-    public String getGrade() {
-        return grade;
-    }
-
     public void setSemester(String semester) {
         this.semester = semester;
+    }
+
+    public String getCno() {
+        return cno;
     }
 
     public void setCno(String cno) {
         this.cno = cno;
     }
 
+    public String getSno() {
+        return sno;
+    }
+
     public void setSno(String sno) {
         this.sno = sno;
+    }
+
+    public String getGrade() {
+        return grade;
     }
 
     public void setGrade(String grade) {

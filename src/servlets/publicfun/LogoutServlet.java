@@ -11,8 +11,8 @@ import java.io.IOException;
 @WebServlet("/LogoutServlet")
 public class LogoutServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session=request.getSession();
-        session.setAttribute("userinfo",null);
-        response.sendRedirect(request.getContextPath()+"/index.jsp_bak");
+        HttpSession session = request.getSession();
+        session.setAttribute("userinfo", null);
+        response.sendRedirect(request.getContextPath() + "/index.jsp_bak");
     }
 }

@@ -16,19 +16,19 @@ public class managerun extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("text/html");
-        String type=request.getParameter("type");
-        String semester=request.getParameter("semester");
-        String major=request.getParameter("major");
-        SelectListDB selectListDB=new SelectListDB();
-        Boolean ok= null;
+        String type = request.getParameter("type");
+        String semester = request.getParameter("semester");
+        String major = request.getParameter("major");
+        SelectListDB selectListDB = new SelectListDB();
+        Boolean ok = null;
         try {
-            ok = selectListDB.changeStatus(type,semester,major);
+            ok = selectListDB.changeStatus(type, semester, major);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        if(ok)
+        if (ok)
             response.setStatus(200);
-        else{
+        else {
             response.setStatus(501);
         }
     }

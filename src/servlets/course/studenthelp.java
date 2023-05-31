@@ -1,7 +1,6 @@
 package servlets.course;
-import DB.CourseDB;
+
 import DB.MessageDB;
-import model.Course;
 import model.Message;
 
 import javax.servlet.ServletException;
@@ -15,12 +14,13 @@ import java.util.List;
 @WebServlet("/studenthelp")
 public class studenthelp extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        MessageDB messageDB=new MessageDB();
-        List<Message> result=messageDB.getAllUncomplete();
-        request.setAttribute("helplist",result);
-        request.getRequestDispatcher("app/root/studenthelp.jsp").forward(request,response);
+        MessageDB messageDB = new MessageDB();
+        List<Message> result = messageDB.getAllUncomplete();
+        request.setAttribute("helplist", result);
+        request.getRequestDispatcher("app/root/studenthelp.jsp").forward(request, response);
     }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+        doPost(request, response);
     }
 }

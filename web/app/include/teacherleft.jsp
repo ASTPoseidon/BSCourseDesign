@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div class="col-md-2 col-sm-3">
     <div class="index_wdyy">
         <h3><span>我的应用</span><a href="" class="sz" id="wdyy_szbtn"></a></h3>

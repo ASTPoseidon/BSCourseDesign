@@ -1,4 +1,4 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%request.setCharacterEncoding("utf-8");%>
 <jsp:include page="../include/htmlHead.jsp">
@@ -12,7 +12,8 @@
         <div class="col-md-8 column">
             <div class="new_course_search_div">
                 <form action="${pageContext.request.contextPath}/searchnew" method="post">
-                    <input type="text" name="tno" class="form-control tno-search" id="tno" placeholder="搜索教师工号" style="height: 34px;"/>
+                    <input type="text" name="tno" class="form-control tno-search" id="tno" placeholder="搜索教师工号"
+                           style="height: 34px;"/>
                     <label style="line-height: 100%;margin-right: 10px;">选择学院: </label>
                     <select class="form-control college-search" id="college" name="college">
                         <option value="all">全部</option>
@@ -46,19 +47,20 @@
                                         ${course.getIntroduction()}
                                 </div>
                                 <div class="course_operation">
-                                    <button class="btn btn-default" onclick="access('course-${course.getCno()}','${course.getCno()}')">通过申请</button>
+                                    <button class="btn btn-default"
+                                            onclick="access('course-${course.getCno()}','${course.getCno()}')">通过申请
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </c:forEach>
                 <script type="text/javascript">
-                    function access(id,idvalue) {
-                        $.post("${pageContext.request.contextPath}/accessnewcourse",{cno:idvalue},function (data,status) {
-                            if(status=="success")
-                            {
+                    function access(id, idvalue) {
+                        $.post("${pageContext.request.contextPath}/accessnewcourse", {cno: idvalue}, function (data, status) {
+                            if (status == "success") {
                                 alert("提交成功，该课程已经通过！");
-                                document.getElementById(id).style.display="none";
+                                document.getElementById(id).style.display = "none";
                             }
                         })
                     }
@@ -69,4 +71,4 @@
         </div>
     </div>
 </div>
-<%@include file="../include/htmlFooter.jsp"%>
+<%@include file="../include/htmlFooter.jsp" %>

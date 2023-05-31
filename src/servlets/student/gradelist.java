@@ -4,7 +4,6 @@ import DB.SemesterDB;
 import DB.StudyCourseDB;
 import com.alibaba.fastjson.JSON;
 import model.StudyCourse;
-import model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,18 +22,18 @@ public class gradelist extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("text/html");
-        String cno=request.getParameter("cno");
-        String cname=request.getParameter("cname");
-        String semester=request.getParameter("semester");
-        StudyCourseDB db=new StudyCourseDB();
-        ArrayList<StudyCourse> courselist= null;
+        String cno = request.getParameter("cno");
+        String cname = request.getParameter("cname");
+        String semester = request.getParameter("semester");
+        StudyCourseDB db = new StudyCourseDB();
+        ArrayList<StudyCourse> courselist = null;
         try {
-            courselist = db.searchGrade(cno,cname,semester);
+            courselist = db.searchGrade(cno, cname, semester);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        String json= JSON.toJSONString(courselist);
-        PrintWriter p=response.getWriter();
+        String json = JSON.toJSONString(courselist);
+        PrintWriter p = response.getWriter();
         p.print(json);
         p.flush();
         p.close();
@@ -42,19 +41,18 @@ public class gradelist extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session=request.getSession();
-        if(session==null)
-        {
-            request.getRequestDispatcher(request.getContextPath()).forward(request,response);
+        HttpSession session = request.getSession();
+        if (session == null) {
+            request.getRequestDispatcher(request.getContextPath()).forward(request, response);
         }
-        SemesterDB semesterDB=new SemesterDB();
-        ArrayList<String> semesterlist=null;
+        SemesterDB semesterDB = new SemesterDB();
+        ArrayList<String> semesterlist = null;
         try {
-            semesterlist=semesterDB.getSemesterList();
+            semesterlist = semesterDB.getSemesterList();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        request.setAttribute("semesterlist",semesterlist);
-        request.getRequestDispatcher("app/student/gradelist.jsp").forward(request,response);
+        request.setAttribute("semesterlist", semesterlist);
+        request.getRequestDispatcher("app/student/gradelist.jsp").forward(request, response);
     }
 }

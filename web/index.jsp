@@ -68,15 +68,15 @@
 </head>
 <body class="text-center">
 <form class="form-login" action="LoginServlet" method="post">
-    <img class="mb-4" src="img/Logo.png" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
+    <img class="mb-4" src="images/login.png" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">选课系统</h1>
     <label for="UserName" class="sr-only">UserName</label>
     <input type="UserName" id="UserName" name="account" class="form-control" placeholder="用户名" required
            autofocus>
     <label for="PassWord" class="sr-only">PassWord</label>
     <input type="PassWord" id="Password" name="password" class="form-control" placeholder="密码" required>
     <div class="form-group">
-        <select class="form-control" name="type">
+        <select name="type" class="form-control">
             <option value="student">学生</option>
             <option value="teacher">教师</option>
             <option value="root">管理员</option>

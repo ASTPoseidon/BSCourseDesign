@@ -19,32 +19,33 @@ public class searchclass extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
-        String cno=request.getParameter("cno");
-        String cname=request.getParameter("cname");
-        String dept=request.getParameter("college");
-        String status=request.getParameter("status");
-        CourseDB courseDB=new CourseDB();
+        String cno = request.getParameter("cno");
+        String cname = request.getParameter("cname");
+        String dept = request.getParameter("college");
+        String status = request.getParameter("status");
+        CourseDB courseDB = new CourseDB();
         try {
-            List<Course> courselist=courseDB.SearchClass(cno,cname,dept,status);
-            request.setAttribute("courselist",courselist);
-            request.getRequestDispatcher("app/root/courseinfo.jsp").forward(request,response);
+            List<Course> courselist = courseDB.SearchClass(cno, cname, dept, status);
+            request.setAttribute("courselist", courselist);
+            request.getRequestDispatcher("app/root/courseinfo.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String cno=request.getParameter("cno");
-        CourseDB courseDB=new CourseDB();
-        Course course= null;
+        String cno = request.getParameter("cno");
+        CourseDB courseDB = new CourseDB();
+        Course course = null;
         try {
             course = courseDB.SelectByCno(cno);
-            List<Course> courselist=new ArrayList<Course>();
+            List<Course> courselist = new ArrayList<Course>();
             courselist.add(course);
-            request.setAttribute("courselist",courselist);
-            request.getRequestDispatcher("app/root/courseinfo.jsp").forward(request,response);
+            request.setAttribute("courselist", courselist);
+            request.getRequestDispatcher("app/root/courseinfo.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
-            PrintWriter printWriter=response.getWriter();
+            PrintWriter printWriter = response.getWriter();
             printWriter.println("<script>alert('服务器出错');history.back();</script>");
             printWriter.flush();
             printWriter.close();

@@ -18,30 +18,31 @@ import java.util.List;
 public class searchnew extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-        String tno=request.getParameter("tno");
-        String college=request.getParameter("college");
-        CourseDB courseDB=new CourseDB();
+        String tno = request.getParameter("tno");
+        String college = request.getParameter("college");
+        CourseDB courseDB = new CourseDB();
         try {
-            List<Course> courselist=courseDB.SelectByCondition(tno,college);
-            request.setAttribute("courselist",courselist);
-            request.getRequestDispatcher("app/root/newcourse.jsp").forward(request,response);
+            List<Course> courselist = courseDB.SelectByCondition(tno, college);
+            request.setAttribute("courselist", courselist);
+            request.getRequestDispatcher("app/root/newcourse.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String cno=request.getParameter("cno");
-        CourseDB courseDB=new CourseDB();
-        Course course= null;
+        String cno = request.getParameter("cno");
+        CourseDB courseDB = new CourseDB();
+        Course course = null;
         try {
             course = courseDB.SelectByCno(cno);
-            List<Course> courselist=new ArrayList<Course>();
+            List<Course> courselist = new ArrayList<Course>();
             courselist.add(course);
-            request.setAttribute("courselist",courselist);
-            request.getRequestDispatcher("app/root/newcourse.jsp").forward(request,response);
+            request.setAttribute("courselist", courselist);
+            request.getRequestDispatcher("app/root/newcourse.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
-            PrintWriter printWriter=response.getWriter();
+            PrintWriter printWriter = response.getWriter();
             printWriter.println("<script>alert('服务器出错');history.back();</script>");
             printWriter.flush();
             printWriter.close();
