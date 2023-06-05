@@ -24,7 +24,7 @@ public class searchhelp extends HttpServlet {
         try {
             helplist = messageDAO.SelectByCondition(sno, status);
             request.setAttribute("helplist", helplist);
-            request.getRequestDispatcher("app/root/studenthelp.jsp").forward(request, response);
+            request.getRequestDispatcher("page/root/studenthelp.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
             PrintWriter printWriter = response.getWriter();
@@ -42,7 +42,7 @@ public class searchhelp extends HttpServlet {
             Message message = messageDAO.SelectById(Integer.parseInt(id));
             helplist.add(message);
             request.setAttribute("helplist", helplist);
-            request.getRequestDispatcher("app/root/studenthelp.jsp").forward(request, response);
+            request.getRequestDispatcher("page/root/studenthelp.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
             PrintWriter printWriter = response.getWriter();

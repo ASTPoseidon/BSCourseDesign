@@ -54,7 +54,7 @@
                 type: "post",
                 success: function (data, textStatus, XMLHttpRequest) {
                     alert("创建成功，可以到运行控制界面进行查看！");
-                    window.location.href = "${pageContext.request.contextPath}/app/root/createlist.jsp";
+                    window.location.href = "${pageContext.request.contextPath}/page/root/createlist.jsp";
                 },
                 error: function (xhr, status, error) {
                     if (xhr.status == 500) {

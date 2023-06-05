@@ -119,7 +119,6 @@
     </div>
 </div>
 <div class="col-md-12 column">
-    <a id="modal-28819" href="#modal-container-28819" role="button" class="btn" data-toggle="modal">触发遮罩窗体</a>
     <div class="modal fade" id="modal-container-28819" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

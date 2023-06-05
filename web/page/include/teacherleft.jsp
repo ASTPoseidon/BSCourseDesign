@@ -5,33 +5,39 @@
         <h3><span>我的应用</span><a href="" class="sz" id="wdyy_szbtn"></a></h3>
         <ul class="list-unstyled mCustomScrollbar _mCS_1 mCS_no_scrollbar" id="index_wdyy" style="height: 350px;">
             <li class="col-md-6 col-sm-6 col-xs-6">
-                <a href="${pageContext.request.contextPath}/app/managepersonalinfo.jsp">
-                    <img src="${pageContext.request.contextPath}/images/ico_but83.png" alt="学籍异动申请">
+                <a href="${pageContext.request.contextPath}/page/managepersonalinfo.jsp">
+                    <img src="${pageContext.request.contextPath}/images/ico_but83.png">
                     <h5>个人信息维护</h5>
                 </a>
             </li>
             <li class="col-md-6 col-sm-6 col-xs-6">
-                <a href="${pageContext.request.contextPath}/app/student/sendmessage.jsp" target="_blank">
+                <a href="${pageContext.request.contextPath}/page/changepassword.jsp">
                     <img src="${pageContext.request.contextPath}/images/ico_but28.png">
-                    <h5>联系老师</h5>
+                    <h5>修改密码</h5>
                 </a>
             </li>
             <li class="col-md-6 col-sm-6 col-xs-6">
-                <a href="${pageContext.request.contextPath}/select_course" target="_blank">
+                <a href="${pageContext.request.contextPath}/teachlist" target="_blank">
                     <img src="${pageContext.request.contextPath}/images/ico_but30.png">
-                    <h5>自主选课</h5>
+                    <h5>授课查看</h5>
                 </a>
             </li>
             <li class="col-md-6 col-sm-6 col-xs-6">
-                <a target="_blank" href="${pageContext.request.contextPath}/course_table">
+                <a href="${pageContext.request.contextPath}/page/addcourse.jsp">
                     <img src="${pageContext.request.contextPath}/images/ico_but31.png">
-                    <h5>查看课表</h5>
+                    <h5>申请新课</h5>
                 </a>
             </li>
             <li class="col-md-6 col-sm-6 col-xs-6">
-                <a href="${pageContext.request.contextPath}/gradelist" target="_blank">
+                <a href="${pageContext.request.contextPath}/grademanage" target="_blank">
                     <img src="${pageContext.request.contextPath}/images/ico_but18.png">
-                    <h5>成绩查询</h5>
+                    <h5>成绩管理</h5>
+                </a>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-6">
+                <a href="${pageContext.request.contextPath}/studentlist" target="_blank">
+                    <img src="${pageContext.request.contextPath}/images/ico_but42.png">
+                    <h5>学生信息查看</h5>
                 </a>
             </li>
         </ul>

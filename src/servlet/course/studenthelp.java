@@ -17,7 +17,7 @@ public class studenthelp extends HttpServlet {
         MessageDAO messageDAO = new MessageDAO();
         List<Message> result = messageDAO.getAllUncomplete();
         request.setAttribute("helplist", result);
-        request.getRequestDispatcher("app/root/studenthelp.jsp").forward(request, response);
+        request.getRequestDispatcher("page/root/studenthelp.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

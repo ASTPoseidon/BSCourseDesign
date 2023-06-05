@@ -40,6 +40,6 @@ public class grademanage extends HttpServlet {
             e.printStackTrace();
         }
         request.setAttribute("gradelist", arr);
-        request.getRequestDispatcher("app/teacher/gradecourse.jsp").forward(request, response);
+        request.getRequestDispatcher("page/teacher/gradecourse.jsp").forward(request, response);
     }
 }

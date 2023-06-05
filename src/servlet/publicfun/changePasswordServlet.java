@@ -23,7 +23,7 @@ public class changePasswordServlet extends HttpServlet {
         Boolean res = userDAO.changePassword(account, oldpassword, type, newpassword);
         PrintWriter printWriter = response.getWriter();
         if (res)
-            printWriter.print("<script type='text/javascript'>alert('修改成功！');window.location.href='" + request.getContextPath() + "/app/content.jsp'</script>);");
+            printWriter.print("<script type='text/javascript'>alert('修改成功！');window.location.href='" + request.getContextPath() + "/page/content.jsp'</script>);");
         else
             printWriter.print("<script type='text/javascript'>alert('修改失败，密码不正确');history.back();</script>");
         printWriter.flush();

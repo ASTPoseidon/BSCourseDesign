@@ -17,7 +17,7 @@ public class newcourse extends HttpServlet {
         CourseDAO courseDAO = new CourseDAO();
         List<Course> result = courseDAO.getAllUncompleCourse();
         request.setAttribute("courselist", result);
-        request.getRequestDispatcher("app/root/newcourse.jsp").forward(request, response);
+        request.getRequestDispatcher("page/root/newcourse.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

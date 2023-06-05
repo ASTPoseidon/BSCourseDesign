@@ -56,6 +56,6 @@ public class course_table extends HttpServlet {
             e.printStackTrace();
         }
         request.setAttribute("semesterlist", semesterlist);
-        request.getRequestDispatcher("app/student/course_table.jsp").forward(request, response);
+        request.getRequestDispatcher("page/student/course_table.jsp").forward(request, response);
     }
 }

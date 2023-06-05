@@ -27,7 +27,7 @@ public class searchclass extends HttpServlet {
         try {
             List<Course> courselist = courseDAO.SearchClass(cno, cname, dept, status);
             request.setAttribute("courselist", courselist);
-            request.getRequestDispatcher("app/root/courseinfo.jsp").forward(request, response);
+            request.getRequestDispatcher("page/root/courseinfo.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -42,7 +42,7 @@ public class searchclass extends HttpServlet {
             List<Course> courselist = new ArrayList<Course>();
             courselist.add(course);
             request.setAttribute("courselist", courselist);
-            request.getRequestDispatcher("app/root/courseinfo.jsp").forward(request, response);
+            request.getRequestDispatcher("page/root/courseinfo.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
             PrintWriter printWriter = response.getWriter();

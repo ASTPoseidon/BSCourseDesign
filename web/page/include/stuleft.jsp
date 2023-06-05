@@ -5,13 +5,13 @@
         <h3><span>我的应用</span><a href="" class="sz" id="wdyy_szbtn"></a></h3>
         <ul class="list-unstyled mCustomScrollbar _mCS_1 mCS_no_scrollbar" id="index_wdyy" style="height: 350px;">
             <li class="col-md-6 col-sm-6 col-xs-6">
-                <a href="${pageContext.request.contextPath}/app/managepersonalinfo.jsp">
+                <a href="${pageContext.request.contextPath}/page/managepersonalinfo.jsp">
                     <img src="${pageContext.request.contextPath}/images/ico_but83.png" alt="学籍异动申请">
                     <h5>个人信息维护</h5>
                 </a>
             </li>
             <li class="col-md-6 col-sm-6 col-xs-6">
-                <a href="${pageContext.request.contextPath}/app/student/sendmessage.jsp" target="_blank">
+                <a href="${pageContext.request.contextPath}/page/student/sendmessage.jsp" target="_blank">
                     <img src="${pageContext.request.contextPath}/images/ico_but28.png">
                     <h5>联系老师</h5>
                 </a>

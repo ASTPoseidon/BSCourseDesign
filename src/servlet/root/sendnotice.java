@@ -24,7 +24,7 @@ public class sendnotice extends HttpServlet {
             Boolean ok = noticeDAO.add(content, title);
             if (ok) {
                 PrintWriter printWriter = response.getWriter();
-                printWriter.println("<script>alert('添加成功！');window.location.href='" + request.getContextPath() + "/app/root/sendnotice.jsp';</script>");
+                printWriter.println("<script>alert('添加成功！');window.location.href='" + request.getContextPath() + "/page/root/sendnotice.jsp';</script>");
                 printWriter.flush();
                 printWriter.close();
             } else {

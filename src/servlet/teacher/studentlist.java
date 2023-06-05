@@ -46,7 +46,7 @@ public class studentlist extends HttpServlet {
         }
         request.setAttribute("courselist", resseme);
         request.setAttribute("studentlist", res);
-        request.getRequestDispatcher("app/teacher/studentlist.jsp").forward(request, response);
+        request.getRequestDispatcher("page/teacher/studentlist.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -65,6 +65,6 @@ public class studentlist extends HttpServlet {
             e.printStackTrace();
         }
         request.setAttribute("courselist", res);
-        request.getRequestDispatcher("app/teacher/studentlist.jsp").forward(request, response);
+        request.getRequestDispatcher("page/teacher/studentlist.jsp").forward(request, response);
     }
 }

@@ -53,6 +53,6 @@ public class gradelist extends HttpServlet {
             e.printStackTrace();
         }
         request.setAttribute("semesterlist", semesterlist);
-        request.getRequestDispatcher("app/student/gradelist.jsp").forward(request, response);
+        request.getRequestDispatcher("page/student/gradelist.jsp").forward(request, response);
     }
 }

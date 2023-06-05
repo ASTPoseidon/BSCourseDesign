@@ -28,7 +28,7 @@ public class searchnotice extends HttpServlet {
         try {
             List<Notice> result = noticeDAO.SelectById(Integer.parseInt(id));
             request.setAttribute("noticelist", result);
-            request.getRequestDispatcher("app/student/noticedetail.jsp").forward(request, response);
+            request.getRequestDispatcher("page/student/noticedetail.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
             PrintWriter printWriter = response.getWriter();

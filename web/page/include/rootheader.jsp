@@ -11,7 +11,7 @@
         <ul class="nav navbar-nav navbar-right  hidden-xs">
             <li class="">
                 <a class="dropdown-toggle grxx" data-toggle="dropdown" aria-expanded="false">
-                    <span style="color:white;font-size:20px;">欢迎您，<%=request.getParameter("sname")%> 同学</span>
+                    <span style="color:white;font-size:20px;">欢迎您，<%=request.getParameter("tname")%> 管理员老师</span>
                 </a>
                 <ul class="dropdown-menu">
                     <li class="divider"></li>
@@ -29,43 +29,51 @@
     <div class="container" id="myDiv1">
         <nav id="cdNav" class="navbar-collapse bs-navbar-collapse collapse" role="navigation" aria-expanded="false">
             <ul class="nav navbar-nav">
-                <li class="dropdown">
+                <li>
                     <a href="${pageContext.request.contextPath}/content">首页</a>
                 </li>
                 <li class="dropdown">
                     <a id="drop" href="" role="button" class="dropdown-toggle" data-toggle="dropdown"
-                       aria-expanded="false">信息维护
+                       aria-expanded="false">教务管理
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                        <li><a tabindex="-1"
-                               href="${pageContext.request.contextPath}/app/managepersonalinfo.jsp">个人信息维护</a>
+                        <li>
+                            <a target="_blank"
+                               href="${pageContext.request.contextPath}/page/root/sendnotice.jsp">发布公告</a>
                         </li>
-                        <li><a tabindex="-1"
-                               href="${pageContext.request.contextPath}/app/changepassword.jsp">修改密码</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a id="drop2" href="" role="button" class="dropdown-toggle" data-toggle="dropdown"
-                       aria-expanded="false">选课系统
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                        <li><a href="${pageContext.request.contextPath}/select_course" target="_blank">自主选课</a></li>
-                        <li><a href="${pageContext.request.contextPath}/app/student/sendmessage.jsp">联系老师</a></li>
+                        <li>
+                            <a target="_blank" href="${pageContext.request.contextPath}/newcourse">新课审核</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="${pageContext.request.contextPath}/studenthelp">学生求助</a>
+                        </li>
+                        <li>
+                            <a target="_blank"
+                               href="${pageContext.request.contextPath}/page/root/addnewpeople.jsp">添加人员</a>
+                        </li>
+                        <li>
+                            <a target="_blank"
+                               href="${pageContext.request.contextPath}/page/root/courseinfo.jsp">课程信息</a>
+                        </li>
+                        <li>
+                            <a target="_blank"
+                               href="${pageContext.request.contextPath}/page/root/coursearrangement.jsp">课程安排</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a id="drop1" href="" role="button" class="dropdown-toggle" data-toggle="dropdown"
-                       aria-expanded="false">信息查询
+                       aria-expanded="false">选课控制
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                         <li>
-                            <a target="_blank" href="${pageContext.request.contextPath}/course_table">课表查看</a>
+                            <a target="_blank"
+                               href="${pageContext.request.contextPath}/page/root/createlist.jsp">创建清单</a>
                         </li>
                         <li>
-                            <a target="_blank" href="${pageContext.request.contextPath}/gradelist">成绩查询</a>
+                            <a href="${pageContext.request.contextPath}/runingcontrol" target="_blank">运行控制</a>
                         </li>
                     </ul>
                 </li>
@@ -73,3 +81,4 @@
         </nav>
     </div>
 </div>
+

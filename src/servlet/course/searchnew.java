@@ -24,7 +24,7 @@ public class searchnew extends HttpServlet {
         try {
             List<Course> courselist = courseDAO.SelectByCondition(tno, college);
             request.setAttribute("courselist", courselist);
-            request.getRequestDispatcher("app/root/newcourse.jsp").forward(request, response);
+            request.getRequestDispatcher("page/root/newcourse.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -39,7 +39,7 @@ public class searchnew extends HttpServlet {
             List<Course> courselist = new ArrayList<Course>();
             courselist.add(course);
             request.setAttribute("courselist", courselist);
-            request.getRequestDispatcher("app/root/newcourse.jsp").forward(request, response);
+            request.getRequestDispatcher("page/root/newcourse.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
             PrintWriter printWriter = response.getWriter();

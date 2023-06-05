@@ -30,7 +30,7 @@ public class content extends HttpServlet {
                 List<Course> courseapp = courseDAO.getAllUncompleCourse();
                 request.setAttribute("helpList", result);
                 request.setAttribute("newcourse", courseapp);
-                request.getRequestDispatcher("app/content.jsp").forward(request, response);
+                request.getRequestDispatcher("page/content.jsp").forward(request, response);
             } else if (type.equals("student")) {
                 Student student = (Student) session.getAttribute("userinfo");
                 String sno = student.getSno();
@@ -51,7 +51,7 @@ public class content extends HttpServlet {
                     request.setAttribute("noticelist", result);
                     request.setAttribute("course_table_list", course_table);
                     request.setAttribute("grade_list", gradelist);
-                    request.getRequestDispatcher("app/content.jsp").forward(request, response);
+                    request.getRequestDispatcher("page/content.jsp").forward(request, response);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -65,7 +65,7 @@ public class content extends HttpServlet {
                 List<Notice> result = noticeDAO.getNotice();
                 request.setAttribute("noticelist", result);
                 request.setAttribute("teachlist", teach_list);
-                request.getRequestDispatcher("app/content.jsp").forward(request, response);
+                request.getRequestDispatcher("page/content.jsp").forward(request, response);
             }
         } catch (Exception e) {
             PrintWriter printWriter = response.getWriter();

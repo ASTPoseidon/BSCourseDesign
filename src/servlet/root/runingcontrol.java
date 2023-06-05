@@ -25,7 +25,7 @@ public class runingcontrol extends HttpServlet {
             e.printStackTrace();
         }
         request.setAttribute("semester", result);
-        request.getRequestDispatcher("app/root/runingcontrol.jsp").forward(request, response);
+        request.getRequestDispatcher("page/root/runingcontrol.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

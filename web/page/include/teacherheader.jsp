@@ -46,10 +46,10 @@
                             <a href="${pageContext.request.contextPath}/studentlist" target="_blank">学生信息查看</a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/app/managepersonalinfo.jsp">个人信息维护</a>
+                            <a href="${pageContext.request.contextPath}/page/managepersonalinfo.jsp">个人信息维护</a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/app/changepassword.jsp">修改密码</a>
+                            <a href="${pageContext.request.contextPath}/page/changepassword.jsp">修改密码</a>
                         </li>
                     </ul>
                 </li>
@@ -63,7 +63,7 @@
                             <a target="_blank" href="${pageContext.request.contextPath}/teachlist">授课查看</a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/app/addcourse.jsp">添加新课程</a>
+                            <a href="${pageContext.request.contextPath}/page/addcourse.jsp">添加新课程</a>
                         </li>
                     </ul>
                 </li>

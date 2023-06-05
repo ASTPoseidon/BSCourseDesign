@@ -20,7 +20,7 @@ public class addpeople extends HttpServlet {
         if (ok) {
             response.setStatus(200);
             PrintWriter printWriter = response.getWriter();
-            printWriter.println("<script>alert('添加成功');window.location.href='" + request.getContextPath() + "/app/root/addnewpeople.jsp';</script>");
+            printWriter.println("<script>alert('添加成功');window.location.href='" + request.getContextPath() + "/page/root/addnewpeople.jsp';</script>");
             printWriter.flush();
             printWriter.close();
         } else {

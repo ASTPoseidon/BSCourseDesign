@@ -23,7 +23,7 @@ public class sendMessageServlet extends HttpServlet {
         Boolean result = messageDAO.add(sno, content, title);
         PrintWriter printWriter = response.getWriter();
         if (result) {
-            printWriter.print("<script type='text/javascript'>alert('提交成功！');window.location.href='" + request.getContextPath() + "/app/student/sendmessage.jsp';</script>");
+            printWriter.print("<script type='text/javascript'>alert('提交成功！');window.location.href='" + request.getContextPath() + "/page/student/sendmessage.jsp';</script>");
             printWriter.flush();
         } else {
             printWriter.print("<script type='text/javascript'>alert('提交失败！');history.back();</script>");

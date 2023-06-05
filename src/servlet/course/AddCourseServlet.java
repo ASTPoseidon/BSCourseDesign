@@ -37,7 +37,7 @@ public class AddCourseServlet extends HttpServlet {
         PrintWriter printWriter = response.getWriter();
         if (result) {
             String content = "<script type='text/javascript'>alert('添加成功，已经提交到教务处！');" +
-                    "window.location.href='" + request.getContextPath() + "/app/addcourse.jsp';</script>";
+                    "window.location.href='" + request.getContextPath() + "/page/addcourse.jsp';</script>";
             printWriter.print(content);
         } else {
             printWriter.print("<script type='text/javascript'>alert('添加失败，请联系教务处！');history.back();</script>");

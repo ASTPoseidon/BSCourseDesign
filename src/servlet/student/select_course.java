@@ -96,10 +96,10 @@ public class select_course extends HttpServlet {
                 courselist = courseSemesterDAO.select_course(semester, cnolist, sno, cno, cname, college, capaticy);
                 System.out.println(semester + cnolist + sno + cno + cname + college + capaticy);
                 request.setAttribute("courselist", courselist);
-                request.getRequestDispatcher("app/student/select_course.jsp").forward(request, response);
+                request.getRequestDispatcher("page/student/select_course.jsp").forward(request, response);
             } else {
                 request.setAttribute("courselist", new ArrayList<Course_select>());
-                request.getRequestDispatcher("app/student/select_course.jsp").forward(request, response);
+                request.getRequestDispatcher("page/student/select_course.jsp").forward(request, response);
             }
         } catch (SQLException e) {
             e.printStackTrace();

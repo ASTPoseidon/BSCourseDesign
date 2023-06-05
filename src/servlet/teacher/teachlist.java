@@ -63,7 +63,7 @@ public class teachlist extends HttpServlet {
                 printWriter.close();
             }
             request.setAttribute("courselist", courselist);
-            request.getRequestDispatcher("app/teacher/teachlist.jsp").forward(request, response);
+            request.getRequestDispatcher("page/teacher/teachlist.jsp").forward(request, response);
 
         }
     }

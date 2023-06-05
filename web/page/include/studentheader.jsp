@@ -39,10 +39,10 @@
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                         <li><a tabindex="-1"
-                               href="${pageContext.request.contextPath}/app/managepersonalinfo.jsp">个人信息维护</a>
+                               href="${pageContext.request.contextPath}/page/managepersonalinfo.jsp">个人信息维护</a>
                         </li>
                         <li><a tabindex="-1"
-                               href="${pageContext.request.contextPath}/app/changepassword.jsp">修改密码</a></li>
+                               href="${pageContext.request.contextPath}/page/changepassword.jsp">修改密码</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -52,7 +52,7 @@
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                         <li><a href="${pageContext.request.contextPath}/select_course" target="_blank">自主选课</a></li>
-                        <li><a href="${pageContext.request.contextPath}/app/student/sendmessage.jsp">联系老师</a></li>
+                        <li><a href="${pageContext.request.contextPath}/page/student/sendmessage.jsp">联系老师</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
