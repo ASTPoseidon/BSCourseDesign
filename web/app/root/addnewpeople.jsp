@@ -100,12 +100,12 @@
                     <div class="form-group">
                         <label for="location1" style="margin-right: 20px;">地址</label>
                         <select class="form-control college-search" id="location1" name="location1" style="width: 40%;">
-                            <option value="昌平校区图书馆">昌平校区图书馆</option>
-                            <option value="昌平校区实验楼A">昌平校区实验楼A</option>
-                            <option value="昌平校区实验楼B">昌平校区实验楼B</option>
-                            <option value="昌平校区实验楼C">昌平校区实验楼C</option>
-                            <option value="昌平校区实验楼D">昌平校区实验楼D</option>
-                            <option value="昌平校区后勤楼">昌平校区后勤楼</option>
+                            <option value="东校区图书馆">东校区图书馆</option>
+                            <option value="东校区实验楼A">东校区实验楼A</option>
+                            <option value="东校区实验楼B">东校区实验楼B</option>
+                            <option value="东校区实验楼C">东校区实验楼C</option>
+                            <option value="东校区实验楼D">东校区实验楼D</option>
+                            <option value="东校区后勤楼">东校区后勤楼</option>
                             <option value="东校区图书馆">东校区图书馆</option>
                             <option value="东校区科技大厦">东校区科技大厦</option>
                         </select>
