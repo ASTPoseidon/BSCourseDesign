@@ -1,3 +1,6 @@
+create database db;
+use db;
+
 create table course
 (
     cno          varchar(20)   not null
