@@ -17,7 +17,7 @@
     function cancle_select(cno, semester, cname, clocation, capacity, self) {
         $.ajax({
             url: "${pageContext.request.contextPath}/select_course",
-            data: {type: "cancle", cno: cno, semester: semester},
+            data: {type: "cancel", cno: cno, semester: semester},
             type: "post",
             success: function (data, textStatus, XMLHttpRequest) {
                 var id = "status-" + cno;

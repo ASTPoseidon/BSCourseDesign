@@ -57,7 +57,6 @@ public class getcourseinfo extends HttpServlet {
                 courseSemester.setCname(resultSet.getString("cname"));
                 res.add(courseSemester);
             }
-//            System.out.println(ps.toString());
             DB.close(connection, ps, resultSet);
             return res;
         } else {
@@ -80,7 +79,6 @@ public class getcourseinfo extends HttpServlet {
                 res.add(courseSemester);
             }
             DB.close(connection, ps, resultSet);
-//            System.out.println(ps.toString());
             return res;
         }
     }
@@ -97,7 +95,6 @@ public class getcourseinfo extends HttpServlet {
             res = getdata(cno, cname, college);
             String json = JSON.toJSONString(res);
             PrintWriter printWriter = response.getWriter();
-//            System.out.println(json);
             printWriter.println(json);
             printWriter.flush();
             printWriter.close();

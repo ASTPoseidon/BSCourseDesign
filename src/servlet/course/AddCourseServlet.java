@@ -30,8 +30,6 @@ public class AddCourseServlet extends HttpServlet {
         course.setPcno(pcno);
         course.setSettno(settno);
         course.setIntroduction(introduction);
-        System.out.println(course.getDept());
-        System.out.println(course.getSettno());
         CourseDAO courseDAO = new CourseDAO();
         Boolean result = courseDAO.addCourse(course);
         PrintWriter printWriter = response.getWriter();

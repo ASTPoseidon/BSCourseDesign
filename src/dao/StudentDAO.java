@@ -83,7 +83,6 @@ public class StudentDAO {
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setString(1, value);
         ps.setString(2, account);
-        System.out.println(ps.toString());
         Integer rows = ps.executeUpdate();
         DB.close(connection, ps);
         if (rows > 0)

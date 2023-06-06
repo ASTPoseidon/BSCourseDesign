@@ -35,7 +35,6 @@ public class SelectListDAO {
         for (Integer i = 0; i < par.size(); i++)
             ps.setString(i + 1, par.get(i));
         ResultSet resultSet = ps.executeQuery();
-        System.out.println(semester);
         while (resultSet.next()) {
             SelectList selectList = new SelectList();
             selectList.setCno(resultSet.getString("cno"));

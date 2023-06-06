@@ -73,7 +73,7 @@
 <body class="text-center">
 <form class="form-login" action="LoginServlet" method="post">
     <img class="mb-4" src="images/login.png" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">选课系统</h1>
+    <h1 class="h3 mb-3 font-weight-normal">欢迎使用选课系统</h1>
     <label for="UserName" class="sr-only">UserName</label>
     <input type="UserName" id="UserName" name="account" class="form-control" placeholder="用户名" required
            autofocus>

@@ -94,7 +94,6 @@ public class select_course extends HttpServlet {
             if (selectLists.size() != 0) {
                 cnolist = selectLists.get(0).getCno();
                 courselist = courseSemesterDAO.select_course(semester, cnolist, sno, cno, cname, college, capaticy);
-                System.out.println(semester + cnolist + sno + cno + cname + college + capaticy);
                 request.setAttribute("courselist", courselist);
                 request.getRequestDispatcher("page/student/select_course.jsp").forward(request, response);
             } else {
