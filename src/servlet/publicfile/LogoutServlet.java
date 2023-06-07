@@ -1,4 +1,4 @@
-package servlet.publicfun;
+package servlet.publicfile;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

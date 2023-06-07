@@ -1,4 +1,4 @@
-package servlet.publicfun;
+package servlet.publicfile;
 
 import bean.Student;
 import bean.Teacher;
