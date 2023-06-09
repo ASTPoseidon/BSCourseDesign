@@ -7,7 +7,7 @@
 <div class="container padding-150">
     <div class="row" style="padding-top: 60px;padding-left:25px;">
         <div class="detail_title">
-            课程学生分数管理
+            课程分数管理
         </div>
         <div class="col-md-8 column">
             <div class="panel-group" id="panel-805813">
